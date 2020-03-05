@@ -53,8 +53,8 @@ main {
 }
 
 .main__section__2 img {
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
 }
 
 .main__section__3 {
@@ -94,7 +94,7 @@ main {
 }
 
 .main__section__6 img {
-  width: inherit;
+  width: 100%;
 }
 
 .main__section__7 {
@@ -331,8 +331,8 @@ main {
 
 .dice{
   background-color: #70348C;
-  width: 5em;
-  height: 5em;
+  width: 6em;
+  height: 6em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -453,7 +453,7 @@ main {
 .main__section__15 h1 {
   font-family: "Kazimir";
   color: #fff;
-  font-size: 15em;
+  font-size: 13em;
 }
 
 .main__section__16 {
