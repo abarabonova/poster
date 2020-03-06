@@ -1,59 +1,60 @@
-// это спизженны1 курсор
-
-(function () {
-    'use strict';
-
-    var boxElem = document.getElementById('m2');
-    var pointerElem = document.getElementById('card');
-
-    function onMouseMove(event) {
-        var mouseX = event.pageX;
-        var mouseY = event.pageY;
-        var crd = boxElem.getBoundingClientRect();
-
-        var activePointer = crd.left <= mouseX && mouseX <= crd.right && crd.top <= mouseY && mouseY <= crd.bottom;
-
-        if (crd.left <= mouseX && mouseX <= crd.right && crd.top <= mouseY && mouseY <= crd.bottom) {
-            if (pointerElem.classList.contains('box-pointer-hidden')) {
-                pointerElem.classList.remove('box-pointer-hidden');
-            }
-
-            pointerElem.style.transform = 'translate3d(' + mouseX + 'px, ' + mouseY + 'px, 0px)';
-
-        } else {
-            pointerElem.classList.add('box-pointer-hidden');
-        }
-    }
-
-    function disablePointer() {
-        requestAnimationFrame(function hidePointer() {
-            pointerElem.classList.add('box-pointer-hidden');
-        });
-    }
-
-    boxElem.addEventListener('mousemove', onMouseMove, false);
-    boxElem.addEventListener('mouseleave', disablePointer, false);
-
-})();
-
-// это кружочки чтобы тыкать и они появлялись
-
-let div = document.createElement('div')
-
-div.onclick = function changeColor() {
-  let a = document.getElementsByClassName('main__section__8')
-  a.style.backgroundColor = "#99c2ff";
-}
-
-div.onclick = function createElements() {
-  let a = document.getElementsByClassName('main__section__8')
-  a.style.backgroundColor = "white"
-
-  let circle = a.getContext("circle");
-  circle.fillStyle = "#290033";
-  circle.fillRect(15, 15, 100, 50);
-  circle.fillRect(185, 15, 100, 50);
-}
+let controller = new ScrollMagic.Controller()
+// // это курсор
+//
+// (function () {
+//     'use strict';
+//
+//     var boxElem = document.getElementById('m2');
+//     var pointerElem = document.getElementById('card');
+//
+//     function onMouseMove(event) {
+//         var mouseX = event.pageX;
+//         var mouseY = event.pageY;
+//         var crd = boxElem.getBoundingClientRect();
+//
+//         var activePointer = crd.left <= mouseX && mouseX <= crd.right && crd.top <= mouseY && mouseY <= crd.bottom;
+//
+//         if (crd.left <= mouseX && mouseX <= crd.right && crd.top <= mouseY && mouseY <= crd.bottom) {
+//             if (pointerElem.classList.contains('box-pointer-hidden')) {
+//                 pointerElem.classList.remove('box-pointer-hidden');
+//             }
+//
+//             pointerElem.style.transform = 'translate3d(' + mouseX + 'px, ' + mouseY + 'px, 0px)';
+//
+//         } else {
+//             pointerElem.classList.add('box-pointer-hidden');
+//         }
+//     }
+//
+//     function disablePointer() {
+//         requestAnimationFrame(function hidePointer() {
+//             pointerElem.classList.add('box-pointer-hidden');
+//         });
+//     }
+//
+//     boxElem.addEventListener('mousemove', onMouseMove, false);
+//     boxElem.addEventListener('mouseleave', disablePointer, false);
+//
+// })();
+//
+// // это кружочки чтобы тыкать и они появлялись
+//
+// let div = document.createElement('div')
+//
+// div.onclick = function changeColor() {
+//   let a = document.getElementsByClassName('main__section__8')
+//   a.style.backgroundColor = "#99c2ff";
+// }
+//
+// div.onclick = function createElements() {
+//   let a = document.getElementsByClassName('main__section__8')
+//   a.style.backgroundColor = "white"
+//
+//   let circle = a.getContext("circle");
+//   circle.fillStyle = "#290033";
+//   circle.fillRect(15, 15, 100, 50);
+//   circle.fillRect(185, 15, 100, 50);
+// }
 
 //это рандом бросок кубики
 
@@ -141,121 +142,144 @@ function rollDice() {
               diceDot5.classList.add('hide');
               diceDot8.classList.add('hide');
     break;
-    default: document.write('unable to roll dice, please reload the page again.');
+    default: document.write('ошибка');
   }
 }
+section.onclick =  rollDice
 
-section.onclick = rollDice.play
+// section.onmouseenter =  rollDice
 
-//
-// //
-// window.onload = play();
-// document.getElementById('tryAgain').addEventListener('click', () => { play() })
-//
-// function play() {
-// 	var blue = '#2980b9';
-// 	var l = Snap('#logo');
-// 	var p = l.select('path');
-//   l.clear();
-// 	l.append(p);
-//
-// 	p.attr({
-// 		fill: blue,
-// 		stroke: '#0066CC',
-// 	});
-//
-// 	setTimeout( function() {
-// 		// modify this one line below, and see the result !
-// 		var logoTitle = 'alticreation';
-// 		var logoRandom = '';
-// 		var logoTitleContainer = l.text(0, '98%', '');
-// 		var possible = "-+*/|}{[]~\\\":;?/.><=+-_)(*&^%$#@!)}";
-// 		logoTitleContainer.attr({
-// 			fontSize: 280,
-// 			fontFamily: 'Dosis',
-// 			fontWeight: '600'
-// 		});
-//
-// 		function generateRandomTitle(i, logoRandom) {
-// 			setTimeout( function() {
-// 				logoTitleContainer.attr({ text: logoRandom });
-// 			}, i*70 );
-// 		}
-//
-// 		for( var i=0; i < logoTitle.length+1; i++ ) {
-// 			logoRandom = logoTitle.substr(0, i);
-// 			for( var j=i; j < logoTitle.length; j++ ) {
-// 				logoRandom += possible.charAt(Math.floor(Math.random() * possible.length));
-// 			}
-// 			generateRandomTitle(i, logoRandom);
-// 			logoRandom = '';
-// 		}
-//
-// 	}, 500 );
-//
-// }
 
 //
-// div.onmouseenter = function (e) {
+// //18
+//
+// let numberOfRects = 5
+// let wordsNum = 5
+//
+// for (let i = 0; i < numberOfRects; i += 1) {
+//   let div = document.getElementById('s17')
+//
+//   if (anime.random(0,1) % 2 === 0) {
+//     let size = `${anime.random(1,5)}vw`
+//     div.style.width = size
+//     div.style.height = size
+//   } else {
+//     div.style.width = `${anime.random(1,5)}vw`
+//     div.style.height = `${anime.random(1,5)}vw`
+//   }
+//
+//   div.style.background = getRGBcolor()
+//
+//
+//   div.onmouseenter = function(e) {
 //     let elStyle = e.target.style
-//     console.log(e.target.style.width.slice(0, -2));
-//     if (elStyle.width === elStyle.height) {
-//       console.log('circle');
+//     let elWidthNum = Number(elStyle.width.slice(0,-2))
+//     let elHeightNum = Number(elStyle.height.slice(0,-2))
+//
+//     if (elWidthNum === elHeightNum) {
+//       let size = `${anime.random(1,5)}vw`
+//       elStyle.width = size
+//       elStyle.height = size
+//     } else {
+//       elStyle.width = `${anime.random(1,5)}vw`
+//       elStyle.height = `${anime.random(1,5)}vw`
 //     }
+//
+//     elStyle.background = getRGBcolor()
+//   }
+//
+//
+//   function getRGBcolor() {
+//     return `rgb(${anime.random(50,255)},${anime.random(50,255)},${anime.random(50,255)})`
+//   }
+//
+//   document.body.append(div)
+// }
+//
+//
 
-//18
+// let gears = document.querySelector('#gears')
+// let gearsAnimation = anime({
+//   targets: gears,
+//   rotate: [0, 360],
+//   duration: 50000,
+//   autoplay: false
+// })
+// // triggerHook:
+// //   'onEnter' (1), 'onCenter' (0.5), 'onLeave' (0)
+// //   или числом от 1 до 0
+// new ScrollMagic.Scene({
+//   triggerElement: gears
+// })
+// .addTo(controller)
+// .on('enter', () => gearsAnimation.play())
+//
 
-let numberOfRects = 5
-let wordsNum = 5
+let gears = document.querySelector('.gear1')
+let gearsAnimation = anime({
+  targets: gears,
+  rotate: [0, 360],
+  easing: 'linear',
+  autoplay: false
+})
+let section6 = document.querySelector('#section-6')
+new ScrollMagic.Scene({
+  triggerElement: section6,
+  duration: section6.getBoundingClientRect().height
+})
+.addTo(controller)
+// .setPin(gears)
+.on('progress', e => {
+  gearsAnimation.seek(gearsAnimation.duration * e.progress)
+})
 
-for (let i = 0; i < numberOfRects; i += 1) {
-  let div = document.getElementById('s17')
-
-  if (anime.random(0,1) % 2 === 0) {
-    let size = `${anime.random(1,5)}vw`
-    div.style.width = size
-    div.style.height = size
-  } else {
-    div.style.width = `${anime.random(1,5)}vw`
-    div.style.height = `${anime.random(1,5)}vw`
-  }
-
-  div.style.background = getRGBcolor()
-
-
-  div.onmouseenter = function(e) {
-    let elStyle = e.target.style
-    let elWidthNum = Number(elStyle.width.slice(0,-2))
-    let elHeightNum = Number(elStyle.height.slice(0,-2))
-
-    if (elWidthNum === elHeightNum) {
-      let size = `${anime.random(1,5)}vw`
-      elStyle.width = size
-      elStyle.height = size
-    } else {
-      elStyle.width = `${anime.random(1,5)}vw`
-      elStyle.height = `${anime.random(1,5)}vw`
-    }
-
-    elStyle.background = getRGBcolor()
-  }
-
-
-  function getRGBcolor() {
-    return `rgb(${anime.random(50,255)},${anime.random(50,255)},${anime.random(50,255)})`
-  }
-
-  document.body.append(div)
-}
+let gearsTwo = document.querySelector('.gear2')
+let gearsAnimationTwo = anime({
+  targets: gears,
+  rotate: [0, 360],
+  easing: 'linear',
+  autoplay: false
+})
+// let section6 = document.querySelector('#section-6')
+new ScrollMagic.Scene({
+  triggerElement: section6,
+  duration: section6.getBoundingClientRect().height
+})
+.addTo(controller)
+// .setPin(gears)
+.on('progress', e => {
+  gearsAnimationTwo.seek(gearsAnimationTwo.duration * e.progress)
+})
 
 
 
 
+let relativeEl = document.querySelector('#coin');
+
+anime({
+  targets: '#coin',
+  translateX: {
+    value: '*=2.5', // 100px * 2.5 = '250px'
+    duration: 1000
+  },
+  width: {
+    value: '-=1em', // 28 - 20 = '8px'
+    duration: 1800,
+    easing: 'easeInOutSine'
+  },
+  rotate: {
+    value: '+=4turn', // 0 + 2 = '2turn'
+    duration: 1800,
+    easing: 'easeInOutSine'
+  },
+  direction: 'alternate'
+});
 
 
-
-
-
+// let fittext = getElementById('#')
+[...document.querySelectorAll('.fluid-text')].forEach((item) => {
+  fitText(item, 0.8)
+});
 
 
 //
