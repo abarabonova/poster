@@ -62,14 +62,82 @@ main {
   background: #70348C;
   grid-column: 5/8;
   grid-row: 1/3;
+  cursor: url("../img/card.svg"), auto;
 }
+
+
+
+.message{
+  width:448px;
+  height:125px;
+  background: #BABFC3;
+  overflow:hidden;
+  border: outset 2px;
+  border-bottom-color:#A8A9A8;
+  border-right-color:#A8A9A8;
+  border-top-color:#EAEAEA;
+  border-left-color:#EAEAEA;
+  position:absolute;
+  top:25%;
+  left:20%;
+  z-index:999;
+}
+.ctrls{
+  z-index:999999;
+  position:absolute;
+  border: outset 2px;
+  border-bottom-color:#A8A9A8;
+  border-right-color:#A8A9A8;
+  border-top-color:#EAEAEA;
+  border-left-color:#EAEAEA;
+  width:300px;
+  padding:10px;
+  background: #BABFC3;
+  font-size:.9em;
+}
+.title{
+  background:#0000A6;
+  color:#fff;
+  overflow:hidden;
+  height:16px;
+  font-size:12px;
+  padding: 2px 4px;
+}
+.title span{
+  margin:0px 2px;
+  position:relative;
+  top:-4px;
+}
+.content .error{
+  position:relative;
+  float:left;
+  top:50%;
+}
+.errmsg{
+  position: relative;
+  font-size: 12px;
+  font-weight: 100;
+  width: 300px;
+  left: 8px;
+  margin-left: 40px;
+}
+.ctrls .title{
+  position: relative;
+  top: -9px;
+  left: -10px;
+  width: 103.3%;
+}
+
+
+
+
+
 
 .main__section__4 {
   background: #F6F7F6;;
   grid-column: 8/9;
   grid-row: 1/6;
-  background-image: linear-gradient( 45deg, black 25%, transparent 25%, transparent 74%, black 75%, black),
-  linear-gradient( 45deg, black 25%, transparent 25%, transparent 74%, black 75%, black);
+  background-image: linear-gradient( 45deg, #252120 25%, transparent 25%, transparent 74%, #252120 75%, #252120), linear-gradient( 45deg, #252120 25%, transparent 25%, transparent 74%, #252120 75%, #252120);
   background-size:100px 100px;
   background-position: 0 0, 50px 50px;
 }
@@ -79,7 +147,9 @@ main {
   background: #70348C;
   grid-column: 1/2;
   grid-row: 3/6;
-  display: table-row;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
  .main__section__5 div {
@@ -131,7 +201,7 @@ main {
 .main__section__7 {
   background: #00844B;
   grid-column: 5/6;
-  grid-row: 4/5;
+  grid-row: 3/5;
 }
 
 .main__section__8 {
@@ -150,6 +220,13 @@ main {
   grid-column: 5/6;
   grid-row: 5/6;
 }
+
+.main__section__9 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 .main__section__10 {
   position: relative;
@@ -419,15 +496,73 @@ main {
 }
 
 
-.dot{
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  background-color: hsl(3, 79%, 38%);
+
+#dot1{
+  grid-area: dot-1;
+}
+#dot2{
+  grid-area: dot-2;
+}
+#dot3{
+  grid-area: dot-3;
+}
+#dot4{
+  grid-area: dot-4;
+}
+#dot5{
+  grid-area: dot-5;
+}
+#dot6{
+  grid-area: dot-6;
+}
+#dot7{
+  grid-area: dot-7;
+}
+#dot8{
+  grid-area: dot-8;
+}
+#dot9{
+  grid-area: dot-9;
 }
 
 
 
+#dot11{
+  grid-area: dot-1;
+}
+#dot22{
+  grid-area: dot-2;
+}
+#dot33{
+  grid-area: dot-3;
+}
+#dot44{
+  grid-area: dot-4;
+}
+#dot55{
+  grid-area: dot-5;
+}
+#dot66{
+  grid-area: dot-6;
+}
+#dot77{
+  grid-area: dot-7;
+}
+#dot88{
+  grid-area: dot-8;
+}
+#dot99{
+  grid-area: dot-9;
+}
+
+
+.dot{
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background-color: #252120;
+  margin-left: 1vh;
+}
 
 .hide {
   display: none;
@@ -442,10 +577,9 @@ main {
   flex-wrap: wrap;
   align-content: flex-start;
 }
- /* как задать всю ширину блока */
+
 .main__section__12 img {
-  height: 14vh;
-  width: 14vh;
+  width: 50%;
 }
 
 .main__section__13 {
@@ -492,6 +626,8 @@ main {
   grid-column: 1/4;
   grid-row: 10/12;
 }
+
+
 
 
 .main__section__17 {

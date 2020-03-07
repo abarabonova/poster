@@ -1,42 +1,53 @@
 let controller = new ScrollMagic.Controller()
-// // это курсор
-//
-// (function () {
-//     'use strict';
-//
-//     var boxElem = document.getElementById('m2');
-//     var pointerElem = document.getElementById('card');
-//
-//     function onMouseMove(event) {
-//         var mouseX = event.pageX;
-//         var mouseY = event.pageY;
-//         var crd = boxElem.getBoundingClientRect();
-//
-//         var activePointer = crd.left <= mouseX && mouseX <= crd.right && crd.top <= mouseY && mouseY <= crd.bottom;
-//
-//         if (crd.left <= mouseX && mouseX <= crd.right && crd.top <= mouseY && mouseY <= crd.bottom) {
-//             if (pointerElem.classList.contains('box-pointer-hidden')) {
-//                 pointerElem.classList.remove('box-pointer-hidden');
-//             }
-//
-//             pointerElem.style.transform = 'translate3d(' + mouseX + 'px, ' + mouseY + 'px, 0px)';
-//
-//         } else {
-//             pointerElem.classList.add('box-pointer-hidden');
-//         }
-//     }
-//
-//     function disablePointer() {
-//         requestAnimationFrame(function hidePointer() {
-//             pointerElem.classList.add('box-pointer-hidden');
-//         });
-//     }
-//
-//     boxElem.addEventListener('mousemove', onMouseMove, false);
-//     boxElem.addEventListener('mouseleave', disablePointer, false);
-//
-// })();
-//
+
+
+
+
+
+$(document).ready(function() {
+  $(document).on("mousemove", function(e) {
+    var parentOffset = $("#main3").offset();
+    var iCount = $(".clone").length;
+    var amount = $("#amountTo").val() - 1;
+    var pStyle = { top: e.pageY - 10, left: e.pageX - 448 / 2 };
+    var cStyle = { top: e.pageY - 10, left: e.pageX - 448 / 2, "z-index": 2 };
+    $(".main").css(pStyle);
+
+    var gg = $("#main3")
+      .clone()
+      .removeClass("main")
+      .addClass("clone");
+    $(gg)
+      .appendTo("#main3")
+      .css(cStyle);
+    $("#amount").html(iCount);
+    $(".clone").each(function(i, elee) {
+      if (iCount > amount) {
+        $(elee).remove();
+      }
+
+      iCount--;
+    });
+  });
+  $("#chords")[0].play();
+});
+
+function justNumbers(e) {
+  var keynum = window.event ? window.event.keyCode : e.which;
+  if (keynum == 8 || keynum == 46) return true;
+
+  return /\d/.test(String.fromCharCode(keynum));
+}
+
+/*dont touch*/
+
+
+
+
+
+
+
+
 // // это кружочки чтобы тыкать и они появлялись
 //
 // let div = document.createElement('div')
@@ -58,7 +69,7 @@ let controller = new ScrollMagic.Controller()
 
 //это рандом бросок кубики
 
-let section = document.querySelector('#m11')
+let section = document.querySelector('.dice')
 
 function rollDice() {
   let diceDot1 = document.querySelector('#dot-1');
@@ -145,7 +156,195 @@ function rollDice() {
     default: document.write('ошибка');
   }
 }
-section.onclick =  rollDice
+section.onclick = rollDice
+
+
+
+//это рандом бросок кубики
+//
+let sectionDice = document.querySelector('#dice-2')
+
+function rollDiceTwo() {
+  let diceDot11 = document.querySelector('#dot1');
+  let diceDot22 = document.querySelector('#dot2');
+  let diceDot33 = document.querySelector('#dot3');
+  let diceDot44 = document.querySelector('#dot4');
+  let diceDot55 = document.querySelector('#dot5');
+  let diceDot66 = document.querySelector('#dot6');
+  let diceDot77 = document.querySelector('#dot7');
+  let diceDot88 = document.querySelector('#dot8');
+  let diceDot99 = document.querySelector('#dot9');
+  let diceRollTwo = Math.floor(Math.random() * 6) + 1;
+
+
+  switch(diceRollTwo) {
+    case 1 :
+              diceDot55.classList.remove('hide');
+              diceDot11.classList.add('hide');
+              diceDot22.classList.add('hide');
+              diceDot33.classList.add('hide');
+              diceDot44.classList.add('hide');
+              diceDot66.classList.add('hide');
+              diceDot77.classList.add('hide');
+              diceDot88.classList.add('hide');
+              diceDot99.classList.add('hide');
+    break;
+    case 2 :
+              diceDot11.classList.remove('hide');
+              diceDot99.classList.remove('hide');
+              diceDot22.classList.add('hide');
+              diceDot33.classList.add('hide');
+              diceDot44.classList.add('hide');
+              diceDot55.classList.add('hide');
+              diceDot66.classList.add('hide');
+              diceDot77.classList.add('hide');
+              diceDot88.classList.add('hide');
+    break;
+    case 3 :
+              diceDot11.classList.remove('hide');
+              diceDot55.classList.remove('hide');
+              diceDot99.classList.remove('hide');
+              diceDot22.classList.add('hide');
+              diceDot33.classList.add('hide');
+              diceDot44.classList.add('hide');
+              diceDot66.classList.add('hide');
+              diceDot77.classList.add('hide');
+              diceDot88.classList.add('hide');
+    break;
+    case 4 :
+              diceDot11.classList.remove('hide');
+              diceDot33.classList.remove('hide');
+              diceDot77.classList.remove('hide');
+              diceDot99.classList.remove('hide');
+
+              diceDot22.classList.add('hide');
+              diceDot44.classList.add('hide');
+              diceDot55.classList.add('hide');
+              diceDot66.classList.add('hide');
+              diceDot88.classList.add('hide');
+    break;
+    case 5 :
+              diceDot11.classList.remove('hide');
+              diceDot33.classList.remove('hide');
+              diceDot55.classList.remove('hide');
+              diceDot77.classList.remove('hide');
+              diceDot99.classList.remove('hide');
+
+              diceDot22.classList.add('hide');
+              diceDot44.classList.add('hide');
+              diceDot66.classList.add('hide');
+              diceDot88.classList.add('hide');
+    break;
+    case 6 :
+              diceDot11.classList.remove('hide');
+              diceDot44.classList.remove('hide');
+              diceDot77.classList.remove('hide');
+              diceDot33.classList.remove('hide');
+              diceDot66.classList.remove('hide');
+              diceDot99.classList.remove('hide');
+              diceDot22.classList.add('hide');
+              diceDot55.classList.add('hide');
+              diceDot88.classList.add('hide');
+    break;
+    default: document.write('ошибка');
+  }
+}
+sectionDice.onclick = rollDiceTwo
+
+
+
+//третий кубик
+let diceSection = document.querySelector('#dice-3')
+
+function rollDiceThree() {
+  let diceDot111 = document.querySelector('#dot11');
+  let diceDot222 = document.querySelector('#dot22');
+  let diceDot333 = document.querySelector('#dot33');
+  let diceDot444 = document.querySelector('#dot44');
+  let diceDot555 = document.querySelector('#dot55');
+  let diceDot666 = document.querySelector('#dot66');
+  let diceDot777 = document.querySelector('#dot77');
+  let diceDot888 = document.querySelector('#dot88');
+  let diceDot999 = document.querySelector('#dot99');
+  let diceRollThree = Math.floor(Math.random() * 6) + 1;
+
+
+  switch(diceRollThree) {
+    case 1 :
+              diceDot555.classList.remove('hide');
+              diceDot111.classList.add('hide');
+              diceDot222.classList.add('hide');
+              diceDot333.classList.add('hide');
+              diceDot444.classList.add('hide');
+              diceDot666.classList.add('hide');
+              diceDot777.classList.add('hide');
+              diceDot888.classList.add('hide');
+              diceDot999.classList.add('hide');
+    break;
+    case 2 :
+              diceDot111.classList.remove('hide');
+              diceDot999.classList.remove('hide');
+              diceDot222.classList.add('hide');
+              diceDot333.classList.add('hide');
+              diceDot444.classList.add('hide');
+              diceDot555.classList.add('hide');
+              diceDot666.classList.add('hide');
+              diceDot777.classList.add('hide');
+              diceDot888.classList.add('hide');
+    break;
+    case 3 :
+              diceDot111.classList.remove('hide');
+              diceDot555.classList.remove('hide');
+              diceDot999.classList.remove('hide');
+              diceDot222.classList.add('hide');
+              diceDot333.classList.add('hide');
+              diceDot444.classList.add('hide');
+              diceDot666.classList.add('hide');
+              diceDot777.classList.add('hide');
+              diceDot888.classList.add('hide');
+    break;
+    case 4 :
+              diceDot111.classList.remove('hide');
+              diceDot333.classList.remove('hide');
+              diceDot777.classList.remove('hide');
+              diceDot999.classList.remove('hide');
+
+              diceDot222.classList.add('hide');
+              diceDot444.classList.add('hide');
+              diceDot555.classList.add('hide');
+              diceDot666.classList.add('hide');
+              diceDot888.classList.add('hide');
+    break;
+    case 5 :
+              diceDot111.classList.remove('hide');
+              diceDot333.classList.remove('hide');
+              diceDot555.classList.remove('hide');
+              diceDot777.classList.remove('hide');
+              diceDot999.classList.remove('hide');
+
+              diceDot222.classList.add('hide');
+              diceDot444.classList.add('hide');
+              diceDot666.classList.add('hide');
+              diceDot888.classList.add('hide');
+    break;
+    case 6 :
+              diceDot111.classList.remove('hide');
+              diceDot444.classList.remove('hide');
+              diceDot777.classList.remove('hide');
+              diceDot333.classList.remove('hide');
+              diceDot666.classList.remove('hide');
+              diceDot999.classList.remove('hide');
+              diceDot222.classList.add('hide');
+              diceDot555.classList.add('hide');
+              diceDot888.classList.add('hide');
+    break;
+    default: document.write('ошибка');
+  }
+}
+diceSection.onclick =  rollDiceThree
+
+
+
 
 // section.onmouseenter =  rollDice
 
@@ -198,23 +397,9 @@ section.onclick =  rollDice
 //
 //
 
-// let gears = document.querySelector('#gears')
-// let gearsAnimation = anime({
-//   targets: gears,
-//   rotate: [0, 360],
-//   duration: 50000,
-//   autoplay: false
-// })
-// // triggerHook:
-// //   'onEnter' (1), 'onCenter' (0.5), 'onLeave' (0)
-// //   или числом от 1 до 0
-// new ScrollMagic.Scene({
-//   triggerElement: gears
-// })
-// .addTo(controller)
-// .on('enter', () => gearsAnimation.play())
-//
 
+
+//gears1
 let gears = document.querySelector('.gear1')
 let gearsAnimation = anime({
   targets: gears,
@@ -233,10 +418,11 @@ new ScrollMagic.Scene({
   gearsAnimation.seek(gearsAnimation.duration * e.progress)
 })
 
-let gearsTwo = document.querySelector('.gear2')
-let gearsAnimationTwo = anime({
-  targets: gears,
-  rotate: [0, 360],
+//gear2
+let gearTwo = document.querySelector('.gear2')
+let gearAnimationTwo = anime({
+  targets: gearTwo,
+  rotate: [-360, 0],
   easing: 'linear',
   autoplay: false
 })
@@ -248,8 +434,67 @@ new ScrollMagic.Scene({
 .addTo(controller)
 // .setPin(gears)
 .on('progress', e => {
-  gearsAnimationTwo.seek(gearsAnimationTwo.duration * e.progress)
+  gearAnimationTwo.seek(gearAnimationTwo.duration * e.progress)
 })
+
+//gear3
+let gearThree = document.querySelector('.gear3')
+let gearAnimationThree = anime({
+  targets: gearThree,
+  rotate: [-360, 0],
+  easing: 'linear',
+  autoplay: false
+})
+// let section6 = document.querySelector('#section-6')
+new ScrollMagic.Scene({
+  triggerElement: section6,
+  duration: section6.getBoundingClientRect().height
+})
+.addTo(controller)
+// .setPin(gears)
+.on('progress', e => {
+  gearAnimationThree.seek(gearAnimationThree.duration * e.progress)
+})
+
+//gear4
+let gearFour = document.querySelector('.gear4')
+let gearAnimationFour = anime({
+  targets: gearFour,
+  rotate: [-360, 0],
+  easing: 'linear',
+  autoplay: false
+})
+// let section6 = document.querySelector('#section-6')
+new ScrollMagic.Scene({
+  triggerElement: section6,
+  duration: section6.getBoundingClientRect().height
+})
+.addTo(controller)
+// .setPin(gears)
+.on('progress', e => {
+  gearAnimationFour.seek(gearAnimationFour.duration * e.progress)
+})
+
+//gear5
+let gearFive = document.querySelector('.gear5')
+let gearAnimationFive = anime({
+  targets: gearFive,
+  rotate: [-360, 0],
+  easing: 'linear',
+  autoplay: false
+})
+// let section6 = document.querySelector('#section-6')
+new ScrollMagic.Scene({
+  triggerElement: section6,
+  duration: section6.getBoundingClientRect().height
+})
+.addTo(controller)
+// .setPin(gears)
+.on('progress', e => {
+  gearAnimationFive.seek(gearAnimationFive.duration * e.progress)
+})
+
+
 
 
 
@@ -280,6 +525,15 @@ anime({
 [...document.querySelectorAll('.fluid-text')].forEach((item) => {
   fitText(item, 0.8)
 });
+
+
+
+
+
+
+//
+
+
 
 
 //

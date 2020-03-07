@@ -6,6 +6,7 @@
   <title>Казино времени</title>
   <link rel="stylesheet" href="styles/master.css">
   <!-- <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css"> -->
+  <script src="js/jquery.min.js" charset="utf-8"></script>
   <script src="js/anime.min.js" charset="utf-8"></script>
 </head>
 <body  id="m2">
@@ -20,8 +21,24 @@
     </section>
 
 
-    <section class="main__section__3">
-      <img src="img/card.svg" id="card" alt="">
+    <section id="main3" class="main__section__3">
+      <div class="ctrls">
+
+<div class="message main">
+	<div class="title">
+		<img src="https://i.imgur.com/V1FwFBr.png" /> <span>Zilarok Securities</span>
+    <span class="close">X</span>
+	</div>
+  <div class="content">
+  	<div class="error">
+  		<img src="https://i.imgur.com/AwI7EDk.png" alt="" />
+  	</div>
+    <div class="errmsg">
+    	<p>This program has performed an illegal operation and will be shut down.</p>
+      <p>If problem persists, contact the program vendor.</p>
+    </div>
+  </div>
+</div>
     </section>
 
 
@@ -76,7 +93,7 @@
 
 
     <section class="main__section__9">
-
+      <img src="img/rectangle.svg" alt="">
     </section>
 
 
@@ -105,27 +122,29 @@
         <div id="dot-8" class="dot hide"></div>
         <div id="dot-9" class="dot hide"></div>
       </div>
-      <div class="dice">
-        <div id="dot-1" class="dot hide"></div>
-        <div id="dot-2" class="dot hide"></div>
-        <div id="dot-3" class="dot hide"></div>
-        <div id="dot-4" class="dot hide"></div>
-        <div id="dot-5" class="dot hide"></div>
-        <div id="dot-6" class="dot hide"></div>
-        <div id="dot-7" class="dot hide"></div>
-        <div id="dot-8" class="dot hide"></div>
-        <div id="dot-9" class="dot hide"></div>
+
+      <div class="dice" id="dice-2">
+        <div id="dot1" class="dot hide"></div>
+        <div id="dot2" class="dot hide"></div>
+        <div id="dot3" class="dot hide"></div>
+        <div id="dot4" class="dot hide"></div>
+        <div id="dot5" class="dot hide"></div>
+        <div id="dot6" class="dot hide"></div>
+        <div id="dot7" class="dot hide"></div>
+        <div id="dot8" class="dot hide"></div>
+        <div id="dot9" class="dot hide"></div>
       </div>
-      <div class="dice">
-        <div id="dot-1" class="dot hide"></div>
-        <div id="dot-2" class="dot hide"></div>
-        <div id="dot-3" class="dot hide"></div>
-        <div id="dot-4" class="dot hide"></div>
-        <div id="dot-5" class="dot hide"></div>
-        <div id="dot-6" class="dot hide"></div>
-        <div id="dot-7" class="dot hide"></div>
-        <div id="dot-8" class="dot hide"></div>
-        <div id="dot-9" class="dot hide"></div>
+
+      <div class="dice" id="dice-3">
+        <div id="dot11" class="dot hide"></div>
+        <div id="dot22" class="dot hide"></div>
+        <div id="dot33" class="dot hide"></div>
+        <div id="dot44" class="dot hide"></div>
+        <div id="dot55" class="dot hide"></div>
+        <div id="dot66" class="dot hide"></div>
+        <div id="dot77" class="dot hide"></div>
+        <div id="dot88" class="dot hide"></div>
+        <div id="dot99" class="dot hide"></div>
       </div>
     </section>
 
@@ -167,7 +186,6 @@
 
 
     <section class="main__section__16">
-
     </section>
 
 
