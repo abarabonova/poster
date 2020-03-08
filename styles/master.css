@@ -26,8 +26,12 @@ main {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   /* grid-auto-rows: repeat(12, 1fr); */
-  grid-auto-rows: minmax(100px, auto);
+  /* grid-auto-rows: minmax(100px, auto); */
+  /* grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end]; */
+  grid-template-rows: 13% 7% 13% 7% 7% 7%;
 }
+
+
 
 .main__section__1 {
   background: #00844B;
@@ -62,71 +66,23 @@ main {
   background: #70348C;
   grid-column: 5/8;
   grid-row: 1/3;
-  cursor: url("../img/card.svg"), auto;
+
+  /* cursor: url("../img/card.svg"), auto; */
 }
 
 
 
 .message{
-  width:448px;
-  height:125px;
-  background: #BABFC3;
+  width:100%;
   overflow:hidden;
-  border: outset 2px;
-  border-bottom-color:#A8A9A8;
-  border-right-color:#A8A9A8;
-  border-top-color:#EAEAEA;
-  border-left-color:#EAEAEA;
   position:absolute;
-  top:25%;
-  left:20%;
   z-index:999;
 }
-.ctrls{
-  z-index:999999;
-  position:absolute;
-  border: outset 2px;
-  border-bottom-color:#A8A9A8;
-  border-right-color:#A8A9A8;
-  border-top-color:#EAEAEA;
-  border-left-color:#EAEAEA;
-  width:300px;
-  padding:10px;
-  background: #BABFC3;
-  font-size:.9em;
-}
-.title{
-  background:#0000A6;
-  color:#fff;
+
+/* .title{
   overflow:hidden;
-  height:16px;
-  font-size:12px;
   padding: 2px 4px;
-}
-.title span{
-  margin:0px 2px;
-  position:relative;
-  top:-4px;
-}
-.content .error{
-  position:relative;
-  float:left;
-  top:50%;
-}
-.errmsg{
-  position: relative;
-  font-size: 12px;
-  font-weight: 100;
-  width: 300px;
-  left: 8px;
-  margin-left: 40px;
-}
-.ctrls .title{
-  position: relative;
-  top: -9px;
-  left: -10px;
-  width: 103.3%;
-}
+} */
 
 
 

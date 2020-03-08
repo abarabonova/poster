@@ -4,40 +4,65 @@ let controller = new ScrollMagic.Controller()
 
 
 
-$(document).ready(function() {
-  $(document).on("mousemove", function(e) {
-    var parentOffset = $("#main3").offset();
-    var iCount = $(".clone").length;
-    var amount = $("#amountTo").val() - 1;
-    var pStyle = { top: e.pageY - 10, left: e.pageX - 448 / 2 };
-    var cStyle = { top: e.pageY - 10, left: e.pageX - 448 / 2, "z-index": 2 };
-    $(".main").css(pStyle);
 
-    var gg = $("#main3")
-      .clone()
-      .removeClass("main")
-      .addClass("clone");
-    $(gg)
-      .appendTo("#main3")
-      .css(cStyle);
-    $("#amount").html(iCount);
-    $(".clone").each(function(i, elee) {
-      if (iCount > amount) {
-        $(elee).remove();
-      }
 
-      iCount--;
-    });
-  });
-  $("#chords")[0].play();
-});
 
-function justNumbers(e) {
-  var keynum = window.event ? window.event.keyCode : e.which;
-  if (keynum == 8 || keynum == 46) return true;
+//
+// $(document).ready(function(){
+//
+//   $(document).on('mousemove',function(e){
+//     // selector: '(#main3)'
+//     // let lastSection = document.getElementById('main3')
+//     // let section3 = document.querySelector('#main3')
+//     let parentOffset = $('#main3').offset();
+//   	let iCount=$('.clone').length;
+//     let amount=$('#amountTo').val()-1;
+//     let pStyle={'top':e.pageY -10,'left':e.pageX - (448/2)};
+//     let cStyle={'top':e.pageY -10,'left':e.pageX - (448/2),'z-index':2,
+//      // duration: section3.getBoundingClientRect().height
+//    };
+//   $('.main').css(pStyle);
+//
+//
+//
+//   let gg=$('.main').clone().removeClass('main').addClass('clone');
+//
+//   $(gg).appendTo('#main3').css(cStyle);
+//     $('#amount').html(iCount);
+//     $('.clone').each(function(i, elee){
+//       if(iCount>amount){
+//         $(elee).remove();
+//       }
+//
+//         iCount--;
+//     });
+// });
+//   $('#chords')[0].play();
+//
+//   });
 
-  return /\d/.test(String.fromCharCode(keynum));
-}
+
+
+
+
+
+
+
+
+
+
+//
+// function justNumbers(e)
+//         {
+//         let keynum = window.event ? window.event.keyCode : e.which;
+//         if ((keynum == 8) || (keynum == 46))
+//         return true;
+//
+//         return /\d/.test(String.fromCharCode(keynum));
+//         }
+
+/*dont touch*/
+
 
 /*dont touch*/
 
