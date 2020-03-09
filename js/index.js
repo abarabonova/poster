@@ -6,41 +6,41 @@ let controller = new ScrollMagic.Controller()
 
 
 
+// курсор
 
-//
-// $(document).ready(function(){
-//
-//   $(document).on('mousemove',function(e){
-//     // selector: '(#main3)'
-//     // let lastSection = document.getElementById('main3')
-//     // let section3 = document.querySelector('#main3')
-//     let parentOffset = $('#main3').offset();
-//   	let iCount=$('.clone').length;
-//     let amount=$('#amountTo').val()-1;
-//     let pStyle={'top':e.pageY -10,'left':e.pageX - (448/2)};
-//     let cStyle={'top':e.pageY -10,'left':e.pageX - (448/2),'z-index':2,
-//      // duration: section3.getBoundingClientRect().height
-//    };
-//   $('.main').css(pStyle);
-//
-//
-//
-//   let gg=$('.main').clone().removeClass('main').addClass('clone');
-//
-//   $(gg).appendTo('#main3').css(cStyle);
-//     $('#amount').html(iCount);
-//     $('.clone').each(function(i, elee){
-//       if(iCount>amount){
-//         $(elee).remove();
-//       }
-//
-//         iCount--;
-//     });
-// });
-//   $('#chords')[0].play();
-//
-//   });
 
+$(document).ready(function(){
+
+  $(document).on('mousemove',function(e){
+    // selector: '(#main3)'
+    // let lastSection = document.getElementById('main3')
+    // let section3 = document.querySelector('#main3')
+    let parentOffset = $('#main3').offset();
+  	let iCount=$('.clone').length;
+    let amount=$('#amountTo').val()-1;
+    let pStyle={'top':e.pageY -10,'left':e.pageX - (448/2)};
+    let cStyle={'top':e.pageY -10,'left':e.pageX - (448/2),'z-index':2,
+     // duration: section3.getBoundingClientRect().height
+   };
+  $('.main').css(pStyle);
+
+
+
+  let gg=$('.main').clone().removeClass('main').addClass('clone');
+
+  $(gg).appendTo('#main3').css(cStyle);
+    $('#amount').html(iCount);
+    $('.clone').each(function(i, elee){
+      if(iCount>amount){
+        $(elee).remove();
+      }
+
+        iCount--;
+    })
+})
+  $('#chords')[0].play()
+
+  })
 
 
 
@@ -60,11 +60,6 @@ let controller = new ScrollMagic.Controller()
 //
 //         return /\d/.test(String.fromCharCode(keynum));
 //         }
-
-/*dont touch*/
-
-
-/*dont touch*/
 
 
 
@@ -92,8 +87,9 @@ let controller = new ScrollMagic.Controller()
 //   circle.fillRect(185, 15, 100, 50);
 // }
 
-//это рандом бросок кубики
 
+
+//это рандом бросок кубики
 let section = document.querySelector('.dice')
 
 function rollDice() {
@@ -367,10 +363,6 @@ function rollDiceThree() {
   }
 }
 diceSection.onclick =  rollDiceThree
-
-
-
-
 // section.onmouseenter =  rollDice
 
 
@@ -419,11 +411,23 @@ diceSection.onclick =  rollDiceThree
 //
 //   document.body.append(div)
 // }
-//
-//
+
+//ВОПРОС
+
+//анимация красных фишек
+let chip = document.querySelector('.chip')
+let chipAnimation = anime({
+  targets: chip,
+  rotate: [0,360],
+  easing: 'linear',
+  autoplay: false
+})
+
+chip.onmouseenter = chipAnimation
 
 
 
+//анимация шестеренок
 //gears1
 let gears = document.querySelector('.gear1')
 let gearsAnimation = anime({
@@ -545,12 +549,88 @@ anime({
   direction: 'alternate'
 });
 
-
+//text
 // let fittext = getElementById('#')
 [...document.querySelectorAll('.fluid-text')].forEach((item) => {
   fitText(item, 0.8)
 });
 
+
+
+
+
+
+let section15 = document.querySelector('#slot-section')
+let slot = (function() {
+
+
+
+  let maxTime = 2000, // time measured in milliseconds
+    height = 710, // height of reels
+    speeds = [], // reel arry speed
+    r = [], // reel arry values
+    reelArry = [
+      [' ⃟ ', '◯', '7','7', '◯', '7'],
+      ['◯', '7', ' ⃟ '],
+      ['7', ' ⃟ ', '◯', '7', ' ⃟ ']
+    ],
+    slotReels, txt, begin
+
+  function init() {
+    slotReels = document.querySelectorAll('.slots__reel');
+    for (i = 0; i < slotReels.length; i++) {
+      slotReels[i].innerHTML = '<ul class="items"><li>' + reelArry[i].join('</li><li>') + '</li></ul><ul class="items"><li>' + reelArry[i].join('</li><li>') + '</li></ul>'
+    }
+
+
+    document.querySelector('#slot-section').addEventListener('click', daMagic);
+  }
+
+  function daMagic() {
+    if (begin !== undefined) {
+      return
+    }
+
+    for (let i = 0; i < 3; ++i) {
+      speeds[i] = Math.random() + .5
+      r[i] = (Math.random() * 3 | 0) * height / 3;
+    }
+    animate()
+  }
+
+  function animate(now) {
+    if (!begin) {
+      begin = now
+    }
+
+    let t = now - begin || 0
+
+    for (let i = 0; i < 3; ++i) {
+      slotReels[i].scrollTop = (speeds[i] / maxTime / 2 * (maxTime - t) * (maxTime - t) + r[i]) % height | 0
+      // console.log(slotReels[i]);
+    }
+
+    if (t < maxTime) {
+      requestAnimationFrame(animate) // animate callback
+      // console.log('animate?')
+    } else {
+      begin = undefined
+      // checkWinner()
+      // console.log('check')
+    }
+
+  }
+
+
+  return {
+    init: init
+  }
+
+})();
+
+slot.init();
+
+section15.onclick = slot
 
 
 
