@@ -684,7 +684,7 @@ main {
 
 .main__section__16 img{
   width: 100%;
-  animation: rotate 5s linear infinite;
+  animation: rotate 10s linear infinite;
 }
 
 @keyframes rotate {
