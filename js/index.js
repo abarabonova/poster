@@ -7,40 +7,40 @@ let controller = new ScrollMagic.Controller()
 
 
 // курсор
-
-
-$(document).ready(function(){
-
-  $(document).on('mousemove',function(e){
-    // selector: '(#main3)'
-    // let lastSection = document.getElementById('main3')
-    // let section3 = document.querySelector('#main3')
-    let parentOffset = $('#main3').offset();
-  	let iCount=$('.clone').length;
-    let amount=$('#amountTo').val()-1;
-    let pStyle={'top':e.pageY -10,'left':e.pageX - (448/2)};
-    let cStyle={'top':e.pageY -10,'left':e.pageX - (448/2),'z-index':2,
-     // duration: section3.getBoundingClientRect().height
-   };
-  $('.main').css(pStyle);
-
-
-
-  let gg=$('.main').clone().removeClass('main').addClass('clone');
-
-  $(gg).appendTo('#main3').css(cStyle);
-    $('#amount').html(iCount);
-    $('.clone').each(function(i, elee){
-      if(iCount>amount){
-        $(elee).remove();
-      }
-
-        iCount--;
-    })
-})
-  $('#chords')[0].play()
-
-  })
+//
+//
+// $(document).ready(function(){
+//
+//   $(document).on('mousemove',function(e){
+//     // selector: '(#main3)'
+//     // let lastSection = document.getElementById('main3')
+//     // let section3 = document.querySelector('#main3')
+//     let parentOffset = $('#main3').offset();
+//   	let iCount=$('.clone').length;
+//     let amount=$('#amountTo').val()-1;
+//     let pStyle={'top':e.pageY -10,'left':e.pageX - (448/2)};
+//     let cStyle={'top':e.pageY -10,'left':e.pageX - (448/2),'z-index':2,
+//      // duration: section3.getBoundingClientRect().height
+//    };
+//   $('.main').css(pStyle);
+//
+//
+//
+//   let gg=$('.main').clone().removeClass('main').addClass('clone');
+//
+//   $(gg).appendTo('#main3').css(cStyle);
+//     $('#amount').html(iCount);
+//     $('.clone').each(function(i, elee){
+//       if(iCount>amount){
+//         $(elee).remove();
+//       }
+//
+//         iCount--;
+//     })
+// })
+//   $('#chords')[0].play()
+//
+//   })
 
 
 
