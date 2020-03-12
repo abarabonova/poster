@@ -418,12 +418,12 @@ diceSection.onclick =  rollDiceThree
 let chip = document.querySelector('.chip')
 let chipAnimation = anime({
   targets: chip,
-  rotate: [0,360],
+  rotate: [0,160],
   easing: 'linear',
   autoplay: false
 })
 
-chip.onmouseenter = chipAnimation
+chip.onmouseenter = chipAnimation.play
 
 
 
@@ -532,15 +532,15 @@ let relativeEl = document.querySelector('#coin');
 
 anime({
   targets: '#coin',
-  translateX: {
-    value: '*=2.5', // 100px * 2.5 = '250px'
-    duration: 1000
-  },
-  width: {
-    value: '-=1em', // 28 - 20 = '8px'
-    duration: 1800,
-    easing: 'easeInOutSine'
-  },
+  // translateX: {
+  //   value: '*=2.5', // 100px * 2.5 = '250px'
+  //   duration: 1000
+  // },
+  // width: {
+  //   value: '-=1em', // 28 - 20 = '8px'
+  //   duration: 1800,
+  //   easing: 'easeInOutSine'
+  // },
   rotate: {
     value: '+=4turn', // 0 + 2 = '2turn'
     duration: 1800,
