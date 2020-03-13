@@ -69,23 +69,19 @@ let controller = new ScrollMagic.Controller()
 
 
 // // это кружочки чтобы тыкать и они появлялись
-//
-// let div = document.createElement('div')
-//
-// div.onclick = function changeColor() {
-//   let a = document.getElementsByClassName('main__section__8')
-//   a.style.backgroundColor = "#99c2ff";
-// }
-//
-// div.onclick = function createElements() {
-//   let a = document.getElementsByClassName('main__section__8')
-//   a.style.backgroundColor = "white"
-//
-//   let circle = a.getContext("circle");
-//   circle.fillStyle = "#290033";
-//   circle.fillRect(15, 15, 100, 50);
-//   circle.fillRect(185, 15, 100, 50);
-// }
+
+let div = document.createElement('div')
+
+
+div.onclick = function createElements() {
+  let a = document.getElementsByClassName('main__section__8')
+  a.style.backgroundColor = "white"
+
+  let circle = a.getContext("circle");
+  circle.fillStyle = "#290033";
+  circle.fillRect(15, 15, 100, 50);
+  circle.fillRect(185, 15, 100, 50);
+}
 
 
 
@@ -366,51 +362,6 @@ diceSection.onclick =  rollDiceThree
 // section.onmouseenter =  rollDice
 
 
-//
-// //18
-//
-// let numberOfRects = 5
-// let wordsNum = 5
-//
-// for (let i = 0; i < numberOfRects; i += 1) {
-//   let div = document.getElementById('s17')
-//
-//   if (anime.random(0,1) % 2 === 0) {
-//     let size = `${anime.random(1,5)}vw`
-//     div.style.width = size
-//     div.style.height = size
-//   } else {
-//     div.style.width = `${anime.random(1,5)}vw`
-//     div.style.height = `${anime.random(1,5)}vw`
-//   }
-//
-//   div.style.background = getRGBcolor()
-//
-//
-//   div.onmouseenter = function(e) {
-//     let elStyle = e.target.style
-//     let elWidthNum = Number(elStyle.width.slice(0,-2))
-//     let elHeightNum = Number(elStyle.height.slice(0,-2))
-//
-//     if (elWidthNum === elHeightNum) {
-//       let size = `${anime.random(1,5)}vw`
-//       elStyle.width = size
-//       elStyle.height = size
-//     } else {
-//       elStyle.width = `${anime.random(1,5)}vw`
-//       elStyle.height = `${anime.random(1,5)}vw`
-//     }
-//
-//     elStyle.background = getRGBcolor()
-//   }
-//
-//
-//   function getRGBcolor() {
-//     return `rgb(${anime.random(50,255)},${anime.random(50,255)},${anime.random(50,255)})`
-//   }
-//
-//   document.body.append(div)
-// }
 
 //ВОПРОС
 
@@ -432,7 +383,7 @@ chip.onmouseenter = chipAnimation.play
 let gears = document.querySelector('.gear1')
 let gearsAnimation = anime({
   targets: gears,
-  rotate: [0, 360],
+  rotate: '+=5turn',
   easing: 'linear',
   autoplay: false
 })
@@ -451,7 +402,7 @@ new ScrollMagic.Scene({
 let gearTwo = document.querySelector('.gear2')
 let gearAnimationTwo = anime({
   targets: gearTwo,
-  rotate: [-360, 0],
+  rotate: '+=4turn',
   easing: 'linear',
   autoplay: false
 })
@@ -470,7 +421,7 @@ new ScrollMagic.Scene({
 let gearThree = document.querySelector('.gear3')
 let gearAnimationThree = anime({
   targets: gearThree,
-  rotate: [-360, 0],
+  rotate: '+=3turn',
   easing: 'linear',
   autoplay: false
 })
@@ -489,7 +440,7 @@ new ScrollMagic.Scene({
 let gearFour = document.querySelector('.gear4')
 let gearAnimationFour = anime({
   targets: gearFour,
-  rotate: [-360, 0],
+  rotate: '+=3turn',
   easing: 'linear',
   autoplay: false
 })
@@ -532,22 +483,15 @@ let relativeEl = document.querySelector('#coin');
 
 anime({
   targets: '#coin',
-  // translateX: {
-  //   value: '*=2.5', // 100px * 2.5 = '250px'
-  //   duration: 1000
-  // },
-  // width: {
-  //   value: '-=1em', // 28 - 20 = '8px'
-  //   duration: 1800,
-  //   easing: 'easeInOutSine'
-  // },
   rotate: {
-    value: '+=4turn', // 0 + 2 = '2turn'
+    value: '+=4turn',
     duration: 1800,
     easing: 'easeInOutSine'
   },
   direction: 'alternate'
 });
+
+
 
 //text
 // let fittext = getElementById('#')
@@ -563,12 +507,10 @@ anime({
 let section15 = document.querySelector('#slot-section')
 let slot = (function() {
 
-
-
-  let maxTime = 2000, // time measured in milliseconds
-    height = 710, // height of reels
-    speeds = [], // reel arry speed
-    r = [], // reel arry values
+  let maxTime = 2000,
+    height = 710, // высота кольца
+    speeds = [],
+    r = [],
     reelArry = [
       [' ⃟ ', '◯', '7','7', '◯', '7'],
       ['◯', '7', ' ⃟ '],
@@ -620,8 +562,6 @@ let slot = (function() {
     }
 
   }
-
-
   return {
     init: init
   }
@@ -635,8 +575,168 @@ section15.onclick = slot
 
 
 
+// timeline slots
 
-//
+let tl = anime.timeline({
+  easing: 'easeOutExpo',
+  duration: 150,
+  loop: true
+});
+
+// Add children
+tl
+.add({
+  targets: '#text1',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text2',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text3',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text4',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text5',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text6',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text7',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text8',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text9',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text10',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text11',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text12',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text13',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+.add({
+  targets: '#text14',
+  zIndex: {
+    value: [1, 3],
+    round: true
+}
+})
+
+
+
+
+
+
+
+
+
+
+
+
+let num = 0;
+
+window.onload = function() {
+
+  document.getElementById('object').onclick = mouseHandler
+  // pagePunch();
+}
+// function pagePunch() {
+//   let bdy = document.getElementById("object");
+//   // let i = 0;
+// }
+
+
+function mouseHandler(evt) {
+  if (!evt) evt = window.event;
+
+  document.getElementById('object').innerHTML = document.getElementById('object').innerHTML + "<div class='tags' id='tags" + num + "'><div>";
+
+  document.getElementById('tags' + num).style.top = evt.clientY - 8 + 'px';
+  document.getElementById('tags' + num).style.left = evt.clientX - 9 + 'px';
+
+  num = num + 1;
+}
+
+
+
+
+
+
 
 
 
