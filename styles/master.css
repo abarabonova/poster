@@ -69,13 +69,13 @@ main {
   grid-column: 5/8;
   grid-row: 1/3;
   overflow: hidden;
-
-  /* cursor: url("../img/card.svg"), auto; */
+  position: relative;
+  cursor: none;
 }
 
 
 
-.message{
+.main__section__3__card, .clone{
   width:100%;
   overflow:hidden;
   position:absolute;
@@ -483,8 +483,8 @@ main {
 }
 
 .main__section__13 div {
-  width: 4.13vw;
-  height: 4.21vw;
+  width: calc(100%/5);
+  height: calc(100%/6);
   border-radius: 50%;
 
   background: #00844B;
@@ -729,13 +729,13 @@ main {
 }
 
 @media (min-width: 1366px) and (max-width: 1800px) {
-  .main {
+  main {
     grid-template-rows: 9% 6% 9% 8% 7% 9% 7% 9% 9% 13% 14%;
   }
 }
 
 @media (min-width: 1024px) {
-  .main {
+  main {
     grid-template-rows: 6% 7% 4% 10% 9% 10% 10% 10% 10% 10% 14%;
   }
 
@@ -746,7 +746,7 @@ main {
 
 @media (max-width: 768px) {
  /* тут сетка не работает */
-  .main{
+  main{
     grid-template-rows: 12% 10% 11% 10% 9% 10% 10% 11% 9% 12% 13%;
   }
 
@@ -811,8 +811,9 @@ main {
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .main {
+  main {
     grid-template-rows: 10% 18% 9% 3% 13% 6% 9% 13% 9% 6% 6%;
+
   }
 
   .main__section__1 {
