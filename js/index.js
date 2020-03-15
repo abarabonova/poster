@@ -13,11 +13,11 @@ $(document).ready(function(){
     let amount = 40;
     let pStyle = {
       'top':e.pageY,
-      'left':e.pageX - (1500/2)
+      'left':e.pageX - (2000/2)
     };
     let cStyle={
       'top' : e.pageY,
-      'left' : e.pageX - (1500/2),
+      'left' : e.pageX - (2000/2),
       'z-index' : 2,
    };
   $('.main__section__3__card').css(pStyle);

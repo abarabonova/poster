@@ -149,7 +149,7 @@ main {
 .gear4 {
   width: 88%;
   position: absolute;
-  bottom: -41%;
+  bottom: -25%;
   left: -22%;
 }
 
@@ -448,7 +448,7 @@ main {
   height: 2em;
   border-radius: 50%;
   background-color: #252120;
-  margin-left: 1vh;
+  margin-left: 1vw;
 }
 
 .hide {
@@ -483,7 +483,7 @@ main {
 }
 
 .main__section__13 div {
-  width: calc(100%/5);
+  width: calc(100%/6);
   height: calc(100%/6);
   border-radius: 50%;
 
@@ -508,6 +508,7 @@ main {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 
 
@@ -572,13 +573,13 @@ main {
       font-size: 17em;
       font-family: impact;
       height: 1.2em;
-      margin-top: 50px;
+      /* margin-top: 50px; */
       list-style: none;
       position: relative;
-      color: white;
+      color: #F6F7F6;
       font-family: "Kazimir";
     }
-    .items li:nth-child(1) {
+    /* .items li:nth-child(1) {
       color: #fff;
     }
     .items li:nth-child(2) {
@@ -586,7 +587,7 @@ main {
     }
     .items li:nth-child(3) {
       color: #fff;
-  }
+  } */
 
 
 
@@ -667,7 +668,7 @@ main {
 .circle-17 {
   width: 62%;
   height: 100%;
-  background: #fff;
+  background: #F6F7F6;
   border-radius: 100%;
 }
 
@@ -705,7 +706,7 @@ main {
   .dot {
     width: 1vw;
     height: 1vw;
-    margin-left: 0.5vh
+    margin-left: 1vw;
   }
 
   .tags {
@@ -719,12 +720,16 @@ main {
 
   .gear2 {
     width: 21%;
-    top: 21%;
+    top: 12%;
   }
 
   .gear1 {
-    top: 17%;
+    top: 14%;
     left: 42%;
+  }
+
+  .gear4 {
+    bottom: -24%;
   }
 
 }
@@ -743,6 +748,27 @@ main {
   .gear4 {
     bottom: -22%;
   }
+}
+
+@media (min-width:768px) {
+  main {
+    grid-template-rows: 9% 6% 7% 10% 9% 8% 7% 9% 9% 10% 16%;
+  }
+
+  .gear1 {
+    width: 43%;
+    left: 29%;
+  }
+
+  .gear4 {
+    bottom: -24%;
+  }
+
+  .gear5 {
+    width: 88%;
+    bottom: 3%;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -778,6 +804,7 @@ main {
 
   .gear4 {
     bottom: -27%;
+    width: 100%;
   }
 
   .main__section__11 {
@@ -805,6 +832,11 @@ main {
     top: 3vw;
     right: 5vw;
     transform: rotate(15deg);
+  }
+
+  .dot {
+    width: 2vw;
+    height: 2vw;
   }
 
 
@@ -890,7 +922,7 @@ main {
   }
 
   .main__section__13 div {
-    width: 9vw;
+    width: calc(100%/8);
     height: 9vw;
   }
 
@@ -901,7 +933,7 @@ main {
 
   .main__section__15 {
     grid-column: 1/9;
-    grid-row: 9/11;
+    grid-row: 9/10;
   }
 
   .main__section__16 {
@@ -917,6 +949,7 @@ main {
   .main__section__18 {
     grid-column: 7/9;
     grid-row: 11/12;
+    justify-content: space-between;
   }
 
   .items li {
@@ -938,12 +971,24 @@ main {
     left: 12vw;
   }
 
-
-
-
-
+  .dot {
+    margin-left: 0.5vw;
+  }
 }
 
+
+@media (max-width: 457px) {
+  .gear4 {
+    width: 121%;
+    left: -32%;
+  }
+
+  .dot {
+    width: 2vw;
+    height: 2vw;
+  }
+
+}
 
 
 
