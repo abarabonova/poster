@@ -723,7 +723,8 @@ main {
   }
 
   .gear1 {
-    top: 24%;
+    top: 17%;
+    left: 42%;
   }
 
 }
@@ -813,7 +814,6 @@ main {
 @media (min-width: 320px) and (max-width: 767px) {
   main {
     grid-template-rows: 10% 18% 9% 3% 13% 6% 9% 13% 9% 6% 6%;
-
   }
 
   .main__section__1 {
