@@ -76,10 +76,10 @@ main {
 
 
 .main__section__3__card, .clone{
-  width:100%;
-  overflow:hidden;
-  position:absolute;
-  z-index:999;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  z-index: 999;
 }
 
 /* .title{
@@ -170,6 +170,8 @@ main {
   grid-column: 6/8;
   grid-row: 3/6;
   overflow: hidden;
+/*
+  position: relative; */
 }
 
 

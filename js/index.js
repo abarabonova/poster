@@ -12,12 +12,12 @@ $(document).ready(function(){
   	let cardsNumber = $('.clone').length;
     let amount = 40;
     let pStyle = {
-      'top':e.pageY,
-      'left':e.pageX - (2000/2)
+      'top': e.pageY,
+      'left': e.pageX + (window.pageYOffset || document.body.scrollTop)
     };
     let cStyle={
       'top' : e.pageY,
-      'left' : e.pageX - (2000/2),
+      'left' : e.pageX + (window.pageYOffset || document.body.scrollTop),
       'z-index' : 2,
    };
   $('.main__section__3__card').css(pStyle);
@@ -42,22 +42,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
-//
-// function justNumbers(e)
-//         {
-//         let keynum = window.event ? window.event.keyCode : e.which;
-//         if ((keynum == 8) || (keynum == 46))
-//         return true;
-//
-//         return /\d/.test(String.fromCharCode(keynum));
-//         }
 
 
 
@@ -384,7 +368,7 @@ console.log(chips);
 let gears = document.querySelector('.gear1')
 let gearsAnimation = anime({
   targets: gears,
-  rotate: '+=5turn',
+  rotate: '+=2turn',
   easing: 'linear',
   autoplay: false
 })
@@ -403,7 +387,7 @@ new ScrollMagic.Scene({
 let gearTwo = document.querySelector('.gear2')
 let gearAnimationTwo = anime({
   targets: gearTwo,
-  rotate: '+=4turn',
+  rotate: '+=2turn',
   easing: 'linear',
   autoplay: false
 })
@@ -422,7 +406,7 @@ new ScrollMagic.Scene({
 let gearThree = document.querySelector('.gear3')
 let gearAnimationThree = anime({
   targets: gearThree,
-  rotate: '+=3turn',
+  rotate: '+=2turn',
   easing: 'linear',
   autoplay: false
 })
@@ -441,7 +425,7 @@ new ScrollMagic.Scene({
 let gearFour = document.querySelector('.gear4')
 let gearAnimationFour = anime({
   targets: gearFour,
-  rotate: '+=3turn',
+  rotate: '+=2turn',
   easing: 'linear',
   autoplay: false
 })
@@ -460,7 +444,7 @@ new ScrollMagic.Scene({
 let gearFive = document.querySelector('.gear5')
 let gearAnimationFive = anime({
   targets: gearFive,
-  rotate: [-360, 0],
+  rotate: '+=2turn',
   easing: 'linear',
   autoplay: false
 })
@@ -485,7 +469,7 @@ let relativeEl = document.querySelector('#coin');
 anime({
   targets: '#coin',
   rotate: {
-    value: '+=4turn',
+    value: '+=2turn',
     duration: 1800,
     easing: 'easeInOutSine'
   },
