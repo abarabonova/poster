@@ -708,7 +708,7 @@ main {
   .dot {
     width: 1vw;
     height: 1vw;
-    margin-left: 1vw;
+    margin-left: 0.8vw;
   }
 
   .tags {
