@@ -1,6 +1,6 @@
-
 //это рандом бросок кубики
 let section = document.querySelector('.dice')
+rollDice()
 
 function rollDice() {
   let diceDot1 = document.querySelector('#dot-1');
@@ -92,8 +92,9 @@ section.onclick = rollDice
 
 
 //это рандом бросок кубики
-//
+
 let sectionDice = document.querySelector('#dice-2')
+rollDiceTwo()
 
 function rollDiceTwo() {
   let diceDot11 = document.querySelector('#dot1');
@@ -186,6 +187,7 @@ sectionDice.onclick = rollDiceTwo
 
 //третий кубик
 let diceSection = document.querySelector('#dice-3')
+rollDiceThree()
 
 function rollDiceThree() {
   let diceDot111 = document.querySelector('#dot11');

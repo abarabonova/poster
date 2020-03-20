@@ -14,8 +14,9 @@ function mouseHandler(evt) {
 
   document.getElementById('object').innerHTML = document.getElementById('object').innerHTML + "<div class='tags' id='tags" + num + "'><div>";
 
-  document.getElementById('tags' + num).style.top = evt.clientY - 8 + 'px';
-  document.getElementById('tags' + num).style.left = evt.clientX - 9 + 'px';
+
+  document.getElementById('tags' + num).style.top = evt.offsetX + 'px'
+  document.getElementById('tags' + num).style.left = evt.offsetY + 'px'
 
   num = num + 1;
 }
@@ -250,6 +251,9 @@ tl
     round: true
 }
 })
+
+
+
 
 
 

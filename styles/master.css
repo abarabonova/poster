@@ -73,11 +73,6 @@ main {
   cursor: none;
 }
 
-.main__section__3:hover {
-  background: #053EEB;
-}
-
-
 
 
 .main__section__3__card, .clone{
@@ -120,12 +115,6 @@ main {
   background: #F6F7F6;
   height: 10%;
   width: 100%;
- }
-
- .main__section__5:hover,
- .main__section__3:hover,
- .main__section__14:hover {
-   background: #053EEB;
  }
 
 .main__section__6 {
@@ -182,6 +171,8 @@ main {
   grid-row: 3/6;
   overflow: hidden;
 
+  cursor: none;
+
   position: relative;
 }
 
@@ -192,20 +183,19 @@ main {
   width: 13em;
   height: 13em;
   border-radius: 50%;
+
+  transform: translate(-50%, 70%);
 }
 
 .main__section__9 {
   background: #252120;
   grid-column: 5/6;
   grid-row: 5/6;
-
-  background-image: url(../img/rectangle.svg);
 }
 
 .main__section__9 img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .main__section__10 {
@@ -223,6 +213,7 @@ main {
 	color: #000;
   background: #F75544;
   padding-left: 0.05em;
+  padding-top: 0.1em;
 }
 
 .main__section__10 h1:nth-child(1) {
@@ -772,7 +763,7 @@ main {
 
   .gear1 {
     width: 43%;
-    left: 29%;
+    left: 34%;
   }
 
   .gear4 {
@@ -878,13 +869,13 @@ main {
   }
 
   .main__section__3 {
-    grid-column: 1/7;
+    grid-column: 1/9;
     grid-row: 3/4;
   }
 
   .main__section__4 {
     grid-column: 7/9;
-    grid-row: 1/4;
+    grid-row: 1/3;
   }
 
   .main__section__5 {
