@@ -73,6 +73,11 @@ main {
   cursor: none;
 }
 
+.main__section__3:hover {
+  background: #053EEB;
+}
+
+
 
 
 .main__section__3__card, .clone{
@@ -115,6 +120,12 @@ main {
   background: #F6F7F6;
   height: 10%;
   width: 100%;
+ }
+
+ .main__section__5:hover,
+ .main__section__3:hover,
+ .main__section__14:hover {
+   background: #053EEB;
  }
 
 .main__section__6 {
@@ -170,8 +181,8 @@ main {
   grid-column: 6/8;
   grid-row: 3/6;
   overflow: hidden;
-/*
-  position: relative; */
+
+  position: relative;
 }
 
 
@@ -187,6 +198,8 @@ main {
   background: #252120;
   grid-column: 5/6;
   grid-row: 5/6;
+
+  background-image: url(../img/rectangle.svg);
 }
 
 .main__section__9 img{
