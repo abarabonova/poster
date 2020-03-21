@@ -276,13 +276,24 @@ tl
 }
 })
 
+// let path = anime.path('path')
+// let svgMotion = anime({
+//   targets: '.circle-17 .main__section__17__div__div',
+//   translateX: path('x'),
+//   translateY: path('y'),
+//   rotate: path('angle'),
+//   easing: 'linear',
+//   duration: 1500,
+//   loop: true
+// })
 
-
-
-
-
-
-
+// let sectionSeventeen = document.querySelector('.circle-17')
+//
+// let circleRotate = anime({
+//   targets: '.main__section__17__div__div',
+//
+//
+// })
 
 
 
