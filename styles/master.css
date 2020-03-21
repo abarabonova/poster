@@ -29,7 +29,9 @@ main {
   /* grid-auto-rows: minmax(100px, auto); */
   /* grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end]; */
   grid-template-rows: 10% 6% 9% 10% 9% 9% 9% 9% 9% 9% 11%;
+  cursor: url("../img/cursor.svg"), auto;
 }
+
 
 
 
@@ -183,8 +185,44 @@ main {
   width: 13em;
   height: 13em;
   border-radius: 50%;
+  /* transform: translateY(5vw); */
 
-  transform: translate(-50%, 70%);
+  /* transform: translate(-50%, 70%); */
+}
+
+.tags:nth-child(2) {
+  top: 10vw;
+  left: 10vh;
+}
+
+.tags:nth-child(3) {
+  top: -2vw;
+  right: 10vh;
+}
+
+.tags:nth-child(4) {
+  top: 15vw;
+  right: -2vw;
+}
+
+.tags:nth-child(5) {
+  bottom: 10vw;
+  left: -2vw;
+}
+
+.tags:nth-child(6) {
+  bottom: 3vw;
+  left: 3vw;
+}
+
+.tags:nth-child(7) {
+  bottom: 12vw;
+  right: 3vw;
+}
+
+.tags:nth-child(8) {
+  bottom: 1vw;
+  right: 1vw;
 }
 
 .main__section__9 {
@@ -666,20 +704,62 @@ main {
 }
 
 .rectangle-17 img {
-  width: 102%;
-  height: 140%;
-  object-fit: cover;
+  height: 100%;
 }
 
 .circle-17 {
   width: 62%;
   height: 100%;
-  background: #F6F7F6;
+  background: #252120;
   border-radius: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__section__17__div__div {
+  width: 1vw;
+  height: 1vw;
+  border-radius: 50%;
+
+  background: #F6F7F6;
+  transform: translateY(150%);
+
+  transform-origin: 0% -700%;
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+
 }
 
 
+.main__section__17__img {
+  animation: translateX 20s linear infinite;
+}
 
+@keyframes translateX {
+  0% {
+    transform: translateX(0vw);
+  }
+  50% {
+    transform: translateX(-20vw);
+  }
+  100% {
+    transform: translateX(-10vw);
+  }
+
+}
 
 
 .main__section__18 {
@@ -701,6 +781,12 @@ main {
 }
 
 
+@media (min-width: 2591px) {
+  .tags {
+    width: 10em;
+    height: 10em;
+  }
+}
 
 
 @media (max-width: 2590px) {
@@ -773,6 +859,12 @@ main {
   .gear5 {
     width: 88%;
     bottom: 3%;
+  }
+
+  .main__section__16 {
+    display: grid;
+    justify-content: center;
+    align-items: center;
   }
 
 }

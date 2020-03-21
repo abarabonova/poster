@@ -1,28 +1,52 @@
 // // это кружочки чтобы тыкать и они появлялись
 
-let div = document.createElement('div')
+// let div = document.createElement('div')
+//
+// let num = 0;
+// let sectionEight = document.querySelector('.main__section__8')
+//
+// window.onload = function() {
+//   document.getElementById('object').onclick = mouseHandler
+// }
+//
+// function mouseHandler(evt) {
+//   if (!evt) evt = window.event;
+//
+//   document.getElementById('object').innerHTML = document.getElementById('object').innerHTML + "<div class='tags' id='tags" + num + "'><div>";
+//
+//
+//   document.getElementById('tags' + num).style.top = evt.offsetX + 'px'
+//   document.getElementById('tags' + num).style.left = evt.offsetY + 'px'
+//
+//   num = num + 1;
+// }
+//
 
-let num = 0;
-let sectionEight = document.querySelector('.main__section__8')
 
-window.onload = function() {
-  document.getElementById('object').onclick = mouseHandler
+let prevTranslateX = 0
+let sectionEight = document.getElementById('object')
+sectionEight.onclick = function() {
+  anime({
+    targets: '.tags',
+    translateX: function() {
+      return prevTranslateX + anime.random(-10, 10)
+    },
+    translateY: function() {
+      return prevTranslateX + anime.random(-10, 10)
+    },
+    changeComplete: function(object) {
+      prevTranslateX = Number(object.animations[0].currentValue.slice(0,-10))
+    }
+  })
 }
 
-function mouseHandler(evt) {
-  if (!evt) evt = window.event;
-
-  document.getElementById('object').innerHTML = document.getElementById('object').innerHTML + "<div class='tags' id='tags" + num + "'><div>";
-
-
-  document.getElementById('tags' + num).style.top = evt.offsetX + 'px'
-  document.getElementById('tags' + num).style.left = evt.offsetY + 'px'
-
-  num = num + 1;
-}
-
-
-
+let box6Animation = anime({
+  targets: '.tags',
+  translateY: '2vw',
+  translateX: '2vw',
+  easing: 'linear',
+  autoplay: false
+})
 
 
 
