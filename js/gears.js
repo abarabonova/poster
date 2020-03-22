@@ -95,20 +95,3 @@ new ScrollMagic.Scene({
 .on('progress', e => {
   gearAnimationFive.seek(gearAnimationFive.duration * e.progress)
 })
-
-
-
-
-
-
-let relativeEl = document.querySelector('#coin');
-
-anime({
-  targets: '#coin',
-  rotate: {
-    value: '+=2turn',
-    duration: 1800,
-    easing: 'easeInOutSine'
-  },
-  direction: 'alternate'
-});

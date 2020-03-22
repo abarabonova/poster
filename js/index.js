@@ -1,28 +1,5 @@
 // // это кружочки чтобы тыкать и они появлялись
 
-// let div = document.createElement('div')
-//
-// let num = 0;
-// let sectionEight = document.querySelector('.main__section__8')
-//
-// window.onload = function() {
-//   document.getElementById('object').onclick = mouseHandler
-// }
-//
-// function mouseHandler(evt) {
-//   if (!evt) evt = window.event;
-//
-//   document.getElementById('object').innerHTML = document.getElementById('object').innerHTML + "<div class='tags' id='tags" + num + "'><div>";
-//
-//
-//   document.getElementById('tags' + num).style.top = evt.offsetX + 'px'
-//   document.getElementById('tags' + num).style.left = evt.offsetY + 'px'
-//
-//   num = num + 1;
-// }
-//
-
-
 let prevTranslateX = 0
 let sectionEight = document.getElementById('object')
 sectionEight.onclick = function() {
@@ -51,10 +28,6 @@ let box6Animation = anime({
 
 
 
-
-
-
-
 //анимация красных фишек
 let chips = document.querySelectorAll('.chip')
 console.log(chips);
@@ -68,6 +41,20 @@ console.log(chips);
   item.onmouseenter = chipAnimation.play
 });
 
+
+
+let coins = document.querySelectorAll('.coin');
+
+console.log(coins);
+[...coins].forEach((item, i) => {
+  let coinsAnimation = anime({
+    targets: item,
+    scale: -1,
+    easing: 'linear',
+    autoplay: false
+  })
+  item.onmouseenter = coinsAnimation.play
+});
 
 
 
@@ -276,23 +263,7 @@ tl
 }
 })
 
-// let path = anime.path('path')
-// let svgMotion = anime({
-//   targets: '.circle-17 .main__section__17__div__div',
-//   translateX: path('x'),
-//   translateY: path('y'),
-//   rotate: path('angle'),
-//   easing: 'linear',
-//   duration: 1500,
-//   loop: true
-// })
 
-// let sectionSeventeen = document.querySelector('.circle-17')
-//
-// let circleRotate = anime({
-//   targets: '.main__section__17__div__div',
-//
-//
 // })
 
 
