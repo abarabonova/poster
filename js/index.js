@@ -139,6 +139,25 @@ slot.init();
 section15.onclick = slot
 
 
+// timeline scale
+let scale = anime.timeline({
+  easing: 'easeInBack',
+  duration: 1000,
+  loop: true
+})
+
+scale
+.add({
+  targets: '.main__section__7__div1',
+  scale: 140
+})
+
+.add({
+  targets: '.main__section__7__div2',
+  scale: 140
+})
+
+
 
 
 // timeline slots
