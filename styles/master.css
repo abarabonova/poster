@@ -101,6 +101,9 @@ main {
   background: #70348C;
   grid-column: 1/2;
   grid-row: 3/6;
+  overflow: hidden;
+
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -655,6 +658,10 @@ font-size: 1em;
     position: relative;
     color: #E8E8E8;
     font-family: "Kazimir";
+  }
+
+  .items li:hover {
+    color: #F75544;
   }
 
 .main__section__15 h1 {

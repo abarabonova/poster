@@ -283,9 +283,18 @@ tl
 })
 
 
-// })
+// ..вертикальные полоски
 
+let strips = document.querySelector('.main__section__5')
+let animeStrips = anime({
+  targets: '.main__section__5__div',
+  height: '-80px',
+  autoplay: false,
+  duration: 2000,
+  direction: 'alternate'
+})
 
+strips.onmouseenter = animeStrips.play
 
 
 //
