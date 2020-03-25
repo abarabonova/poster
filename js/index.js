@@ -1,4 +1,4 @@
-// // это кружочки чтобы тыкать и они появлялись
+//это кружочки чтобы тыкать и они появлялись
 
 let prevTranslateX = 0
 let sectionEight = document.getElementById('object')
@@ -42,7 +42,7 @@ console.log(chips);
 });
 
 
-
+// зеленые шарики
 let coins = document.querySelectorAll('.coin');
 
 console.log(coins);
@@ -68,7 +68,7 @@ console.log(coins);
 
 
 
-
+// слот
 
 let section15 = document.querySelector('#slot-section')
 let slot = (function() {
@@ -166,9 +166,8 @@ let tl = anime.timeline({
   easing: 'easeOutExpo',
   duration: 150,
   loop: true
-});
+})
 
-// Add children
 tl
 .add({
   targets: '#text1',
@@ -284,7 +283,6 @@ tl
 
 
 // ..вертикальные полоски
-
 let strips = document.querySelector('.main__section__5')
 let animeStrips = anime({
   targets: '.main__section__5__div',

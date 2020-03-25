@@ -15,10 +15,13 @@ new ScrollMagic.Scene({
   duration: section6.getBoundingClientRect().height
 })
 .addTo(controller)
-// .setPin(gears)
 .on('progress', e => {
   gearsAnimation.seek(gearsAnimation.duration * e.progress)
 })
+
+
+
+
 
 //gear2
 let gearTwo = document.querySelector('.gear2')
@@ -28,16 +31,21 @@ let gearAnimationTwo = anime({
   easing: 'linear',
   autoplay: false
 })
-// let section6 = document.querySelector('#section-6')
+
 new ScrollMagic.Scene({
   triggerElement: section6,
   duration: section6.getBoundingClientRect().height
 })
+
 .addTo(controller)
-// .setPin(gears)
+
 .on('progress', e => {
   gearAnimationTwo.seek(gearAnimationTwo.duration * e.progress)
 })
+
+
+
+
 
 //gear3
 let gearThree = document.querySelector('.gear3')
@@ -47,16 +55,22 @@ let gearAnimationThree = anime({
   easing: 'linear',
   autoplay: false
 })
-// let section6 = document.querySelector('#section-6')
+
 new ScrollMagic.Scene({
   triggerElement: section6,
   duration: section6.getBoundingClientRect().height
 })
+
 .addTo(controller)
-// .setPin(gears)
+
 .on('progress', e => {
   gearAnimationThree.seek(gearAnimationThree.duration * e.progress)
 })
+
+
+
+
+
 
 //gear4
 let gearFour = document.querySelector('.gear4')
@@ -66,16 +80,19 @@ let gearAnimationFour = anime({
   easing: 'linear',
   autoplay: false
 })
-// let section6 = document.querySelector('#section-6')
+
 new ScrollMagic.Scene({
   triggerElement: section6,
   duration: section6.getBoundingClientRect().height
 })
 .addTo(controller)
-// .setPin(gears)
+
 .on('progress', e => {
   gearAnimationFour.seek(gearAnimationFour.duration * e.progress)
 })
+
+
+
 
 //gear5
 let gearFive = document.querySelector('.gear5')
@@ -85,13 +102,16 @@ let gearAnimationFive = anime({
   easing: 'linear',
   autoplay: false
 })
-// let section6 = document.querySelector('#section-6')
+
 new ScrollMagic.Scene({
   triggerElement: section6,
   duration: section6.getBoundingClientRect().height
 })
 .addTo(controller)
-// .setPin(gears)
+
 .on('progress', e => {
   gearAnimationFive.seek(gearAnimationFive.duration * e.progress)
 })
+
+
+// 
