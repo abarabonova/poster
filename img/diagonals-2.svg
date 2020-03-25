@@ -1,0 +1,30 @@
+<svg width="179" height="358" viewBox="0 0 179 358" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="25" y="0" width="179" height="362">
+<rect x="25.9316" y="0.982422" width="178.043" height="360.181" fill="#70348C"/>
+</mask>
+<g mask="url(#mask0)">
+<rect width="28.3132" height="475.98" transform="matrix(0.772133 -0.635461 0.452785 0.89162 -128.152 93.4795)" fill="#70348C"/>
+<rect width="28.3089" height="475.919" transform="matrix(0.771923 -0.635716 0.452543 0.891743 23.4463 -31.3691)" fill="#70348C"/>
+<rect width="28.3089" height="475.919" transform="matrix(0.771923 -0.635716 0.452543 0.891743 -52.3545 31.0527)" fill="#70348C"/>
+<rect width="28.3089" height="475.919" transform="matrix(0.771923 -0.635716 0.452543 0.891743 99.2441 -93.7935)" fill="#70348C"/>
+<rect width="28.3089" height="475.919" transform="matrix(0.771923 -0.635716 0.452543 0.891743 175.043 -156.218)" fill="#70348C"/>
+</g>
+<mask id="mask1" mask-type="alpha" maskUnits="userSpaceOnUse" x="-82" y="0" width="179" height="362">
+<rect x="-81.4268" y="0.982422" width="178.043" height="360.181" fill="#70348C"/>
+</mask>
+<g mask="url(#mask1)">
+<rect width="28.3132" height="475.98" transform="matrix(0.772133 -0.635461 0.452785 0.89162 -235.51 93.4795)" fill="#70348C"/>
+<rect width="28.3089" height="475.919" transform="matrix(0.771923 -0.635716 0.452543 0.891743 -83.9111 -31.3691)" fill="#70348C"/>
+<rect width="28.3089" height="475.919" transform="matrix(0.771923 -0.635716 0.452543 0.891743 -158.745 31.0527)" fill="#70348C"/>
+<rect width="28.3089" height="475.919" transform="matrix(0.771923 -0.635716 0.452543 0.891743 -8.11328 -93.7935)" fill="#70348C"/>
+<rect width="28.3089" height="475.919" transform="matrix(0.771923 -0.635716 0.452543 0.891743 67.6846 -156.218)" fill="#70348C"/>
+</g>
+<mask id="mask2" mask-type="alpha" maskUnits="userSpaceOnUse" x="133" y="0" width="179" height="362">
+<rect x="133.475" y="0.982422" width="178.043" height="360.181" fill="#70348C"/>
+</mask>
+<g mask="url(#mask2)">
+<rect width="28.3132" height="475.98" transform="matrix(0.772133 -0.635461 0.452785 0.89162 -20.6094 93.4795)" fill="#70348C"/>
+<rect width="28.3089" height="475.919" transform="matrix(0.771923 -0.635716 0.452543 0.891743 130.989 -31.3691)" fill="#70348C"/>
+<rect width="28.3089" height="475.919" transform="matrix(0.771923 -0.635716 0.452543 0.891743 55.1885 31.0527)" fill="#70348C"/>
+</g>
+</svg>

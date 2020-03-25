@@ -79,8 +79,8 @@ let slot = (function() {
     r = [],
     reelArry = [
       [' ⃟ ', '◯', '7','7', '◯', '7'],
-      ['◯', '7', ' ⃟ '],
-      ['7', ' ⃟ ', '◯', '7', ' ⃟ ']
+      ['◯', '7', ' ⃟ ', '◯', '7',' ⃟ '],
+      ['7', ' ⃟ ', '◯', '7', ' ⃟ ','◯']
     ],
     slotReels, txt, begin
 
@@ -89,8 +89,6 @@ let slot = (function() {
     for (i = 0; i < slotReels.length; i++) {
       slotReels[i].innerHTML = '<ul class="items"><li>' + reelArry[i].join('</li><li>') + '</li></ul><ul class="items"><li>' + reelArry[i].join('</li><li>') + '</li></ul>'
     }
-
-
     document.querySelector('#slot-section').addEventListener('click', daMagic);
   }
 
